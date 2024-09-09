@@ -18,7 +18,7 @@ Algoritmos e Programação Estruturada :  Trabalho em Grupo N1
 . Criar uma função que converta números hexadecimais em decimais. 
 
 4 - Wemerson
-. FCriar respositório. ✅
+. Criar respositório.✅ 
 . Formatar artigo, juntar as partes, colocar referencias e o apêndice.
 . Realizar a atividade 3.2.1 que imprime os limites da variável e o que acontece se ultrapassar esse limite.
 
