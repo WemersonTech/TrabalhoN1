@@ -27,12 +27,6 @@ setlocale(LC_ALL, "Portuguese");
     
 	printf("\nObs.: \nlong int = 4 bytes (32 bits) ou 8 bytes (64 bits);\nunsigned long int = 4 bytes (32 bits) ou 8 bytes (64 bits)\n");
 	
-    
-    
-    int i = INT_MAX;
-    printf("\nValor limite de int: %d\n", i); i++;
-    printf("Valor de int +1 = overflow: %d\n\n", i);
-
 
     return 0;
 }
