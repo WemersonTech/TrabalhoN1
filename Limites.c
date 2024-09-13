@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 //AnÃ¡lise dos limites suportados pelos tipos de arquivos
+=======
+//Análise dos limites suportados pelos tipos de arquivos
+>>>>>>> Stashed changes
 
 #include <stdio.h>
 #include <limits.h> 
@@ -8,7 +12,11 @@ int main() {
 
 setlocale(LC_ALL, "Portuguese");
      
+<<<<<<< Updated upstream
     printf("\tSegue abaixo, tabela de capacidades por cada tipo de variÃ¡vel :\n");
+=======
+    printf("\tSegue abaixo, tabela de capacidades por cada tipo de variável :\n");
+>>>>>>> Stashed changes
     printf("+-------------------------+--------+---------------------------+---------------------------+\n");
     printf("| Tipo                    | Bytes: |      Valor Min.:          |      Valor Max.:          |\n");
     printf("+-------------------------+--------+---------------------------+---------------------------+\n");
@@ -27,6 +35,15 @@ setlocale(LC_ALL, "Portuguese");
     
 	printf("\nObs.: \nlong int = 4 bytes (32 bits) ou 8 bytes (64 bits);\nunsigned long int = 4 bytes (32 bits) ou 8 bytes (64 bits)\n");
 	
+<<<<<<< Updated upstream
+=======
+    
+    
+    int i = INT_MAX;
+    printf("\nValor limite de int: %d\n", i); i++;
+    printf("Valor de int +1 = overflow: %d\n\n", i);
+
+>>>>>>> Stashed changes
 
     return 0;
 }
