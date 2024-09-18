@@ -1,123 +1,104 @@
 #include <stdio.h>
 
-int main(){
+int main() {
 
-//Variavel float para(N1/N2/PPD/EXAME UNIFICADO/N3/NOTA FINAL)
-//Variavel Int para (Exame unificado/n3 minusculos)
+//Variaveis Float e Int
+//(EU = EXAME UNIFICADO) 
 
-     float N1, N2, PPD, EU, N3, nf;
-    int eu, n3;
+    float N1, N2, PPD, N3 = 0.0, EU = 0.0, nota_final;
+    int fezEU, fezN3;
 
-//Leitura,impressão e validação das notas N1, N2 e PPD
+//Leitura e impressão das notas N1, N2 e PPD
 
-    printf("Digite a nota N1 (0 a 4.5): ");
+    printf("Digite a nota N1 (entre 0 e 4.5): ");
     scanf("%f", &N1);
 
-    if (N1 < 0 || N1 > 4.5){
-
-        printf("Erro: Digite a nota da N1 entre 0 e 4.5.\n");
+    if (N1 < 0 || N1 > 4.5) {
+        printf("Erro: N1 invalida digite entre 0 e 4.5 \n");
         return 3;
     }
 
-    printf("Digite a nota N2 (0 a 4.5): ");
+    printf("Digite a nota N2 (entre 0 e 4.5): ");
     scanf("%f", &N2);
-    if (N2 < 0 || N2 > 4.5){
 
-        printf("Erro: Digite a nota da N2 entre 0 e 4.5.\n");
+    if (N2 < 0 || N2 > 4.5) {
+        printf("Erro: N2 invalida digite entre 0 e 4.5\n");
         return 3;
     }
 
-    printf("Digite a nota PPD (0 a 1): ");
+    printf("Digite a nota PPD (entre 0 e 1): ");
     scanf("%f", &PPD);
-    if (PPD < 0 || PPD > 1){
 
-        printf("Erro: Digite a nota da PPD entre 0 e 1.\n");
+    if (PPD < 0 || PPD > 1) {
+        printf("Erro: PPD invalida digite entre 0 e 1\n");
         return 3;
     }
 
-//Leitura e impressão do exame unificado
+//Fez ou não o exame unificado digitar a nota caso for sim
 
-    printf("O estudante fez o Exame Unificado? (1 - Sim, 0 - Não): ");
-    scanf("%d", &eu);
-    if (eu != 0 && eu != 1){
+    printf("O aluno fez o Exame Unificado? (0 = nao, 1 = sim): ");
+    scanf("%d", &fezEU);
 
-        printf("Erro: Valor invalido! Digite 1 para sim ou 0 para não\n");
+    if (fezEU != 0 && fezEU != 1) {
+        printf("Erro:EU invalida\n");
         return 3;
     }
 
-    //nota do exame unificado
-
-    if (eu == 1){
-
-        printf("Digite a nota do Exame Unificado (0 a 1): ");
+    if (fezEU == 1) {
+        printf("Digite a nota do Exame Unificado (entre 0 e 1): ");
         scanf("%f", &EU);
-
-        if (EU < 0 || EU > 1){
-
-            printf("Erro: Digite a nota do Exame Unificado entre 0 e 1.\n");
+        if (EU < 0 || EU > 1) {
+            printf("Erro: Nota do Exame Unificado invalida digite entre 0 e 1\n");
             return 3;
         }
-
-        PPD = EU; 
     }
 
-    //Leitura e impressão para a N3
+//Fez n3 ou não e digitar a nota caso a resposta seja sim
 
-    printf("O estudante fez a N3? (1 - Sim, 0 - Não): ");
-    scanf("%d", &n3);
-    if (n3 != 0 && n3 != 1){
+    printf("O aluno fez a N3? (0 = nao, 1 = sim): ");
+    scanf("%d", &fezN3);
 
-        printf("Erro: Valor invalido! Digite 1 para sim ou 0 para não\n");
+    if (fezN3 != 0 && fezN3 != 1) {
+        printf("Erro:N3 invalida\n");
         return 3;
     }
 
-//Se fez a N3, lê e valida a nota, substitui a menor entre N1 e N2
-
-    if (n3 == 1)
-    {
-        printf("Digite a nota N3 (0 a 4.5): ");
+    if (fezN3 == 1) {
+        printf("Digite a nota N3 (entre 0 e 4.5): ");
         scanf("%f", &N3);
-        if (N3 < 0 || N3 > 4.5)
-        {
-            printf("Erro: Digite a nota da N3 entre 0 e 4.5.\n");
+        if (N3 < 0 || N3 > 4.5) {
+            printf("Erro:Nota N3 invalida digite entre 0 e 4.5\n");
             return 3;
         }
 
-//Substituir a menor nota entre N1 e N2 por N3  
-     
-     if (N1 < N2){
-           
+//Substituir a nota da n1 e n2 por n3
+
+        if (N1 < N2) {
             N1 = N3;
-
-        }
-        else{
-
+        } else {
             N2 = N3;
-
         }
     }
 
-//Cálculo da nota final
+//Calculo da nota final
 
-    nf = N1 + N2 + PPD;
+    nota_final = N1 + N2 + PPD + EU;
 
-//Verificar se a nota final está entre 0 e 10
+//Se a nota final está entre 0 e 10/ 10(o maximo)
 
-     if (nf < 0 || nf > 10){
-
-        printf("Erro: Digite a Nota Final entre 0 e 10.\n");
-        return 3;
-
+    if (nota_final > 10) {
+        nota_final = 10;
+    } else if (nota_final < 0) {
+        nota_final = 0;
     }
-    
-//Mostrar a nota final e o status (aprovado/reprovado)  
 
-    printf("Nota final: %.2f\n", nf);
-    if (nf >= 6.0){
+//Resultado final
+
+    printf("Nota final: %.2f\n", nota_final);
+
+    if (nota_final >= 6) {
         printf("Aprovado\n");
-    }
-    else
-    {
+    } else {
         printf("Reprovado\n");
     }
 
