@@ -11,7 +11,7 @@ int main() {
 setlocale(LC_ALL, "Portuguese");
      
 
-    printf("\tSegue abaixo, tabela de capacidades por cada tipo de variável :\n");
+    printf("\tSegue abaixo, tabela de capacidades por cada tipo de variavel :\n");
     printf("+-------------------------+--------+---------------------------+---------------------------+\n");
     printf("| Tipo                    | Bytes: |      Valor Min.:          |      Valor Max.:          |\n");
     printf("+-------------------------+--------+---------------------------+---------------------------+\n");
