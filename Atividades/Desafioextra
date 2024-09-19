@@ -1,15 +1,13 @@
 #include <stdio.h>
+#include <locale.h> 
 
 int main() {
 
-//Variaveis Float e Int
-//(EU = EXAME UNIFICADO) 
-
+setlocale(LC_ALL, "Portuguese");
+     
     float N1, N2, PPD, N3 = 0.0, EU = 0.0, nota_final;
     int fezEU, fezN3;
-
-//Leitura e impressão das notas N1, N2 e PPD
-
+    
     printf("Digite a nota N1 (entre 0 e 4.5): ");
     scanf("%f", &N1);
 
@@ -17,7 +15,6 @@ int main() {
         printf("Erro: N1 invalida digite entre 0 e 4.5 \n");
         return 3;
     }
-
     printf("Digite a nota N2 (entre 0 e 4.5): ");
     scanf("%f", &N2);
 
@@ -25,7 +22,6 @@ int main() {
         printf("Erro: N2 invalida digite entre 0 e 4.5\n");
         return 3;
     }
-
     printf("Digite a nota PPD (entre 0 e 1): ");
     scanf("%f", &PPD);
 
@@ -34,8 +30,6 @@ int main() {
         return 3;
     }
 
-//Fez ou não o exame unificado digitar a nota caso for sim
-
     printf("O aluno fez o Exame Unificado? (0 = nao, 1 = sim): ");
     scanf("%d", &fezEU);
 
@@ -43,7 +37,6 @@ int main() {
         printf("Erro:EU invalida\n");
         return 3;
     }
-
     if (fezEU == 1) {
         printf("Digite a nota do Exame Unificado (entre 0 e 1): ");
         scanf("%f", &EU);
@@ -52,9 +45,6 @@ int main() {
             return 3;
         }
     }
-
-//Fez n3 ou não e digitar a nota caso a resposta seja sim
-
     printf("O aluno fez a N3? (0 = nao, 1 = sim): ");
     scanf("%d", &fezN3);
 
@@ -70,37 +60,39 @@ int main() {
             printf("Erro:Nota N3 invalida digite entre 0 e 4.5\n");
             return 3;
         }
-
-//Substituir a nota da n1 e n2 por n3
-
+        
         if (N1 < N2) {
             N1 = N3;
         } else {
             N2 = N3;
         }
     }
-
-//Calculo da nota final
-
+    
     nota_final = N1 + N2 + PPD + EU;
-
-//Se a nota final está entre 0 e 10/ 10(o maximo)
 
     if (nota_final > 10) {
         nota_final = 10;
     } else if (nota_final < 0) {
         nota_final = 0;
     }
-
-//Resultado final
-
-    printf("Nota final: %.2f\n", nota_final);
-
-    if (nota_final >= 6) {
-        printf("Aprovado\n");
+	
+	printf("\n+-----------------------+----------------+\n");
+    printf("|               RESULTADO                |\n");
+    printf("+--------------------+-------------------+\n");
+    printf("|        Notas       |   Nota Final      |\n");
+    printf("+--------------------+-------------------+\n");
+    printf("|N1  = %.2f          |                   |\n", N1);
+    printf("|N2  = %.2f          |                   |\n", N2);
+    printf("|PPD = %.2f          |      %.2f         |\n", PPD, nota_final);
+    if (nota_final >= 7) {
+        printf("|EU  = %.2f          |    Aprovado! :)   |\n", EU);
     } else {
-        printf("Reprovado\n");
+        printf("|EU  = %.2f          |    Reprovado :(   |\n", EU);
     }
+    printf("|N3  = %.2f          |                   |\n", N3);  
+    printf("+--------------------+-------------------+\n");
+
+
 
     return 0;
 }
