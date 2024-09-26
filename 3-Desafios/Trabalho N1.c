@@ -10,8 +10,7 @@ int main() {
     scanf("%u", &ui);
     printf("Valor inicial de unsigned int: %u\n", ui);
     // Incrementa ui além do seu limite máximo, provocando um overflow
-    // Overflow ocorre quando o valor de uma variável excede o limite máximo que pode ser armazenado,
-    // fazendo com que o contador retorne ao valor mínimo ou inicie um novo ciclo.
+    
     ui++;
     printf("Valor apos incremento alem do limite (overflow): %u\n", ui);
 
@@ -20,8 +19,7 @@ int main() {
     scanf("%hd", &si);
     printf("Valor inicial de short int: %d\n", si);
     // Decrementa si além do seu limite mínimo, provocando um underflow
-    // Underflow ocorre quando o valor de uma variável cai abaixo do limite mínimo que pode ser armazenado,
-    // fazendo com que o contador retorne ao valor máximo ou inicie um novo ciclo.
+
     si--;
     printf("Valor apos decremento alem do limite (underflow): %d\n", si);
 
