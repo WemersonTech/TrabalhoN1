@@ -7,8 +7,8 @@ int main() {
     
     int quant_cadeias;
     int i, j;
-    char tempStr[2], mensagemDec[50002] = "";
-    char parar[] = "00\0";
+    char tempStr[2], mensagemDec[51005] = "";
+    
     
     
     scanf("%d", &quant_cadeias);
@@ -42,6 +42,7 @@ int main() {
         
         int comprimento = strlen(mensagemCod);
         char duplaHex[3] = "11\0"; 
+        char parar[] = "00\0";
         int x = 0; 
         
         // Loop para processar a mensagem codificada em pares de caracteres

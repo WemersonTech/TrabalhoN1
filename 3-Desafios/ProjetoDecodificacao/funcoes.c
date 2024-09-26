@@ -4,16 +4,16 @@
 
 int func_val(int x, int b) {
     
-    double a0 = 186.752;
-    double a1 = -148.235;
-    double a2 = 34.5049;
-    double a3 = -3.5091;
-    double a4 = 0.183166;
-    double a5 = -0.00513554;
-    double a6 = 0.0000735464;
-    double a7 = -4.22038e-7;
+    float a0 = 186.752;
+    float a1 = -148.235;
+    float a2 = 34.5049;
+    float a3 = -3.5091;
+    float a4 = 0.183166;
+    float a5 = -0.00513554;
+    float a6 = 0.0000735464;
+    float a7 = -4.22038e-7;
 
-    double result = a0 
+    float result = a0 
                   + (a1 + b) * x 
                   + a2 * pow(x, 2) 
                   + a3 * pow(x, 3) 
