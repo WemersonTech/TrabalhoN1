@@ -45,28 +45,32 @@ setlocale(LC_ALL, "Portuguese");
             return 3;
         }
     }
-    printf("O aluno fez a N3? (0 = nao, 1 = sim): ");
+    
+    if(N1+N2+PPD+EU < 7){
+    	printf("O aluno fez a N3? (0 = nao, 1 = sim): ");
     scanf("%d", &fezN3);
 
-    if (fezN3 != 0 && fezN3 != 1) {
-        printf("Erro:N3 invalida\n");
-        return 3;
+	    if (fezN3 != 0 && fezN3 != 1) {
+	        printf("Erro:N3 invalida\n");
+	        return 3;
+	    }
+	
+	    if (fezN3 == 1) {
+	        printf("Digite a nota N3 (entre 0 e 4.5): ");
+	        scanf("%f", &N3);
+	        if (N3 < 0 || N3 > 4.5) {
+	            printf("Erro:Nota N3 invalida digite entre 0 e 4.5\n");
+	            return 3;
+	        }
+	        
+	        if (N1 < N2) {
+	            N1 = N3;
+	        } else {
+	            N2 = N3;
+	        }
+	    }
     }
-
-    if (fezN3 == 1) {
-        printf("Digite a nota N3 (entre 0 e 4.5): ");
-        scanf("%f", &N3);
-        if (N3 < 0 || N3 > 4.5) {
-            printf("Erro:Nota N3 invalida digite entre 0 e 4.5\n");
-            return 3;
-        }
-        
-        if (N1 < N2) {
-            N1 = N3;
-        } else {
-            N2 = N3;
-        }
-    }
+    
     
     nota_final = N1 + N2 + PPD + EU;
 
